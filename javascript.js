@@ -35,6 +35,8 @@ function getHumanChoice() {
 
     human = prompt("Choose one and write it - rock, paper or scissors?")
 
+    human = human.toLowerCase()
+
     if (human = "rock") {
        humannumber = 1 / 3
     } else if (human = "paper") {
@@ -85,7 +87,10 @@ function score() {
 }
 
 
-// There is a control in console
+// There is a function for starting one round of game
+
+
+function playRound() {
 
 getComputerChoice();
 
@@ -93,19 +98,24 @@ getComputerChoice();
 getHumanChoice();
 
 
-score()
+score();
 
+}
 
-console.log("tady jsou základní hodnoty voleb")
+// There is a for loop for playing 5 rounds
 
-console.log(human);
-console.log(pc);
+for (let i = 0; i <= 4; i++) {
 
-console.log(humannumber);
-console.log(number);
+    playRound()
+    console.log(i)
+}
 
+if (pcscore < humanscore) {
+    console.log("You WIN! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+    } else if (pcscore == humanscore) {
+        console.log("Its a DRAW - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+    } else {
+        console.log("You WON! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+    }
 
-console.log("tady je skóre")
-
-console.log(humanscore);
-console.log(pcscore);
+// There is a control in console
