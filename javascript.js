@@ -27,5 +27,16 @@ function getComputerChoice() {
    return pc
 }
 
+// This is function for getting user choice
 
+function getHumanChoice() {
+
+    let human = prompt("Choose one and write it - Rock, Paper or Scissors?")
+
+    return human
+}
+
+
+console.log(getHumanChoice())
+console.log(getComputerChoice())
 
