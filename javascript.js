@@ -102,20 +102,94 @@ score();
 
 }
 
+// Here is DOM manipulation
+
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+
+const results = document.querySelector("#result");
+
+const gameResults = document.createElement("p");
+gameResults.classList.add("oneresult");
+
+
+btnRock.addEventListener("click", () => {
+    humannumber = 1 / 3;
+    
+    getComputerChoice();
+
+    score();
+
+    result()
+
+    console.log(number)
+    console.log(humannumber)
+
+    fgameResult()
+
+});
+
+btnPaper.addEventListener("click", () => {
+    humannumber = 2 / 3;
+    
+    getComputerChoice();
+
+    score();
+
+    result()
+
+    console.log(number)
+    console.log(humannumber)
+
+});
+
+btnScissors.addEventListener("click", () => {
+    humannumber = 3 / 3;
+    
+    getComputerChoice();
+
+    score();
+
+    result()
+
+    console.log(number)
+    console.log(humannumber)
+
+});
+
 // There is a for loop for playing 5 rounds
 
-for (let i = 0; i <= 4; i++) {
+ 
 
-    playRound()
-    console.log(i)
-}
+
+function fgameResult() {
 
 if (pcscore < humanscore) {
-    console.log("You WIN! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        gameResults.textContent = "You are Winning! - The score is " + humanscore + "/" + pcscore +" (Human/PC)";
+        results.appendChild(gameResults);
     } else if (pcscore == humanscore) {
-        console.log("Its a DRAW - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        gameResults.textContent = "Its a DRAW - The score is " + humanscore + "/" + pcscore +" (Human/PC)";
+        results.appendChild(gameResults);
     } else {
-        console.log("You WON! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        gameResults.textContent = "You are losing! - The score is " + humanscore + "/" + pcscore +" (Human/PC)";
+        results.appendChild(gameResults);
     }
 
-// There is a control in console
+}
+
+function result() {
+
+
+
+    if (pcscore < humanscore) {
+        console.log("You WIN! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        } else if (pcscore == humanscore) {
+            console.log("Its a DRAW - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        } else {
+            console.log("You LOST! - The score is " + humanscore + "/" + pcscore +" (Human/PC)")
+        }
+    
+    }
+
+// There is section for five rounds
