@@ -11,6 +11,7 @@ let number = 0;
 let humannumber = 0;
 let pcscore = 0;
 let humanscore = 0;
+let gamenumber = 0;
 
 // This is the function for making a random choice for computer
 
@@ -113,49 +114,75 @@ const results = document.querySelector("#result");
 const gameResults = document.createElement("p");
 gameResults.classList.add("oneresult");
 
+console.log(gamenumber + " je tolik")
 
 btnRock.addEventListener("click", () => {
     humannumber = 1 / 3;
+    gamenumber = gamenumber + 1;
+
+    if (gamenumber < 5) {
+        getComputerChoice();
     
-    getComputerChoice();
+        score();
+    
+        result();
+    
+        console.log(number)
+        console.log(humannumber)
+    
+        fgameResult();
+    
+        } else {
+            endgame()
+        }
 
-    score();
-
-    result()
-
-    console.log(number)
-    console.log(humannumber)
-
-    fgameResult()
-
+        console.log(gamenumber + " je tolik")
 });
 
 btnPaper.addEventListener("click", () => {
     humannumber = 2 / 3;
-    
+    gamenumber = gamenumber + 1;
+
+    if (gamenumber < 5) {
     getComputerChoice();
 
     score();
 
-    result()
+    result();
 
     console.log(number)
     console.log(humannumber)
 
+    fgameResult();
+
+    } else {
+        endgame()
+    }
+
+    console.log(gamenumber + " je tolik")
 });
 
 btnScissors.addEventListener("click", () => {
     humannumber = 3 / 3;
+    gamenumber = gamenumber + 1;
+
+    if (gamenumber < 5) {
+        getComputerChoice();
     
-    getComputerChoice();
+        score();
+    
+        result();
+    
+        console.log(number)
+        console.log(humannumber)
+    
+        fgameResult();
+    
+        } else {
+            endgame()
+        }
 
-    score();
-
-    result()
-
-    console.log(number)
-    console.log(humannumber)
-
+        console.log(gamenumber + " je tolik")
 });
 
 // There is a for loop for playing 5 rounds
@@ -193,3 +220,16 @@ function result() {
     }
 
 // There is section for five rounds
+
+function endgame() {
+    if (pcscore < humanscore) {
+        gameResults.textContent = "You are Winner!";
+        
+    } else if (pcscore == humanscore) {
+        gameResults.textContent = "Its a DRAW";
+        
+    } else {
+        gameResults.textContent = "You are loser!";
+        
+    
+}};
